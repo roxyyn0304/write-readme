@@ -1,6 +1,6 @@
-# 📝 DSH Write README Skill
+# 📝 Write README Skill
 
-> A README writing skill for DeepSeek Harness (DSH) that helps AI generate professional, structured project documentation.
+> A universal README writing skill for Claude, GitHub Copilot, DeepSeek Harness, and other AI Agents.
 
 🌐 English | [简体中文](README.md)
 
@@ -26,19 +26,35 @@
 
 ### Installation
 
-Copy `SKILL.md` and `reference/` folder to your DSH config directory:
+Copy the command below and paste it to your AI Agent, it will install automatically:
 
-```bash
-# Windows
-%USERPROFILE%\.dsh\.agent-presets\<your-preset>\skills\write-readme\
+**Claude Code:**
+```
+Please install write-readme skill:
+git clone https://github.com/roxyyn0304/dsh-write-readme.git ~/.claude/skills/write-readme
+```
 
-# macOS/Linux
-~/.dsh/.agent-presets/<your-preset>/skills/write-readme/
+**GitHub Copilot:**
+```
+Please install write-readme skill:
+git clone https://github.com/roxyyn0304/dsh-write-readme.git .github/skills/write-readme
+```
+
+**DeepSeek Harness:**
+```
+Please install write-readme skill:
+git clone https://github.com/roxyyn0304/dsh-write-readme.git ~/.dsh/.agent-presets/mimeng/skills/write-readme
+```
+
+**Other Agents:**
+```
+Please install write-readme skill:
+git clone https://github.com/roxyyn0304/dsh-write-readme.git to your skills directory
 ```
 
 ### Usage
 
-Simply say in DSH:
+After installation, simply say to your AI:
 
 ```
 Help me write a README
@@ -62,7 +78,7 @@ AI will automatically load this skill and follow this workflow:
 
 ```
 dsh-write-readme/
-├── SKILL.md                    # Main skill file (143 lines)
+├── SKILL.md                    # Main skill file
 ├── README.md                   # This file (Chinese)
 ├── README_EN.md                # This file (English)
 ├── LICENSE                     # MIT License
@@ -186,7 +202,7 @@ Auto-check after writing README:
 
 ## 🤝 Contributing
 
-Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributions welcome! Please submit Issues or Pull Requests.
 
 ## 📄 License
 
@@ -194,9 +210,9 @@ Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 🔗 Related Resources
 
-- [DeepSeek Harness](https://github.com/deepseek-ai/dsh) — Official DSH repository
 - [Agent Skills Specification](https://agentskills.io) — Agent Skills standard
-- [GitHub Copilot Skills](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) — GitHub official documentation
+- [Claude Skills Documentation](https://code.claude.com/docs/en/skills) — Claude official docs
+- [GitHub Copilot Skills](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) — GitHub official docs
 
 ---
 

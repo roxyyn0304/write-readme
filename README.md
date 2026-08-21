@@ -1,6 +1,6 @@
-# 📝 DSH Write README Skill
+# 📝 Write README Skill
 
-> 为 DeepSeek Harness (DSH) 设计的 README 写作技能，帮助 AI 生成专业、结构化的项目文档。
+> 通用 README 写作技能，支持 Claude、GitHub Copilot、DeepSeek Harness 等 AI Agent。
 
 🌐 [English](README_EN.md) | 简体中文
 
@@ -26,19 +26,35 @@
 
 ### 安装
 
-将 `SKILL.md` 和 `reference/` 文件夹复制到你的 DSH 配置目录：
+直接复制下面的命令，粘贴给你的 AI Agent，它会自动帮你安装：
 
-```bash
-# Windows
-%USERPROFILE%\.dsh\.agent-presets\<你的preset>\skills\write-readme\
+**Claude Code:**
+```
+请帮我安装 write-readme 技能：
+git clone https://github.com/roxyyn0304/dsh-write-readme.git ~/.claude/skills/write-readme
+```
 
-# macOS/Linux
-~/.dsh/.agent-presets/<你的preset>/skills/write-readme/
+**GitHub Copilot:**
+```
+请帮我安装 write-readme 技能：
+git clone https://github.com/roxyyn0304/dsh-write-readme.git .github/skills/write-readme
+```
+
+**DeepSeek Harness:**
+```
+请帮我安装 write-readme 技能：
+git clone https://github.com/roxyyn0304/dsh-write-readme.git ~/.dsh/.agent-presets/mimeng/skills/write-readme
+```
+
+**其他 Agent：**
+```
+请帮我安装 write-readme 技能：
+git clone https://github.com/roxyyn0304/dsh-write-readme.git 到你的 skills 目录
 ```
 
 ### 使用
 
-在 DSH 中直接说：
+安装后，直接对 AI 说：
 
 ```
 帮我写 README
@@ -62,7 +78,7 @@ AI 会自动加载这个技能，按照以下流程生成文档：
 
 ```
 dsh-write-readme/
-├── SKILL.md                    # 主技能文件（143 行）
+├── SKILL.md                    # 主技能文件
 ├── README.md                   # 本文件
 ├── README_EN.md                # 英文版说明
 ├── LICENSE                     # MIT 协议
@@ -186,7 +202,7 @@ Fork 来源：
 
 ## 🤝 Contributing
 
-欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎贡献！请提交 Issue 或 Pull Request。
 
 ## 📄 License
 
@@ -194,8 +210,8 @@ Fork 来源：
 
 ## 🔗 相关资源
 
-- [DeepSeek Harness](https://github.com/deepseek-ai/dsh) — DSH 官方仓库
 - [Agent Skills 规范](https://agentskills.io) — Agent Skills 标准
+- [Claude Skills 文档](https://code.claude.com/docs/en/skills) — Claude 官方文档
 - [GitHub Copilot Skills](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills) — GitHub 官方文档
 
 ---
