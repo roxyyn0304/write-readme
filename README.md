@@ -21,7 +21,7 @@
 复制下面的命令，粘贴给你的 AI Agent 即可自动安装：
 
 ```
-请帮我安装 write-readme 技能：git clone https://github.com/roxyyn0304/dsh-write-readme.git 到你的 skills 目录
+请帮我安装 write-readme 技能：git clone https://github.com/roxyyn0304/write-readme.git 到你的 skills 目录
 ```
 
 ## 📖 使用

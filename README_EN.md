@@ -21,7 +21,7 @@
 Copy the command below and paste it to your AI Agent:
 
 ```
-Please install write-readme skill: git clone https://github.com/roxyyn0304/dsh-write-readme.git to your skills directory
+Please install write-readme skill: git clone https://github.com/roxyyn0304/write-readme.git to your skills directory
 ```
 
 ## 📖 Usage
