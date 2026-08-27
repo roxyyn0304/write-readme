@@ -1,6 +1,6 @@
 # 📝 Write README Skill
 
-> A universal README writing skill for Claude, GitHub Copilot, DeepSeek Harness, and other AI Agents.
+> Universal README writing skill for AI Agents like Claude, GitHub Copilot, DeepSeek Harness.
 
 🌐 English | [简体中文](README.md)
 
@@ -8,34 +8,34 @@
 
 | Feature | Description |
 |---------|-------------|
-| Smart Analysis | Auto-detect project type (Rust/Node/Python/Android/Web) |
+| Smart Analysis | Auto-detect project type (Rust/Node/Python/Android/Web/C++/Java/C#) |
 | Template Matching | Select best README structure based on project type |
-| Bilingual | Generate README.md + README_EN.md automatically |
-| Good vs Bad Examples | 8 comparison examples showing best practices |
+| Bilingual | Generate both README.md (Chinese) and README_EN.md (English) |
+| Quality Scoring | Auto-evaluate README quality (max 40 points) |
+| Auto Check | Comprehensive structure, content, and format checks |
 
-**Supported types:** Application/Tool · Library/Package · Android Module · Web App
+**Supported Project Types:** Applications · Libraries · Android Modules · Web Apps · CLI Tools · API Services · Desktop Apps
 
 ## 🚀 Installation
 
 Copy the command below and paste it to your AI Agent:
 
 ```
-Please install write-readme skill:
-git clone https://github.com/roxyyn0304/dsh-write-readme.git to your skills directory
+Please install write-readme skill: git clone https://github.com/roxyyn0304/dsh-write-readme.git to your skills directory
 ```
-
-| Agent | Install Path |
-|-------|--------------|
-| Claude Code | `~/.claude/skills/write-readme` |
-| GitHub Copilot | `.github/skills/write-readme` |
-| DeepSeek Harness | `~/.dsh/.agent-presets/<preset>/skills/write-readme` |
 
 ## 📖 Usage
 
 After installation, simply say:
 
 ```
-Help me write a README
+Write README for my project
+```
+
+or
+
+```
+Improve my README
 ```
 
 ## 📁 File Structure
@@ -45,24 +45,47 @@ Help me write a README
 ├── reference/
 │   ├── template-app.md   # Application/Tool template
 │   ├── template-lib.md   # Library/Package template
-│   ├── template-module.md # Android Module template
-│   ├── template-web.md   # Web Application template
+│   ├── template-module.md # Android module template
+│   ├── template-web.md   # Web application template
+│   ├── template-cli.md   # CLI tool template (new)
+│   ├── template-desktop.md # Desktop application template (new)
+│   ├── template-api.md   # API service template (new)
 │   ├── examples.md       # Good vs Bad examples
-│   └── prompt-template.md # Prompt template collection
+│   ├── prompt-template.md # Prompt templates
+│   └── checklist.md      # Quality checklist (new)
 ```
 
 ## 🔧 Customization
 
-- **Add templates:** Create `template-xxx.md` in `reference/`, register in SKILL.md Phase 2
-- **Modify rules:** Edit the Writing rules table in SKILL.md
+- **Add Templates:** Create `template-xxx.md` in `reference/` and register in `SKILL.md` Phase 2 table
+- **Modify Rules:** Edit Writing rules table in `SKILL.md`
+- **Custom Checks:** Edit checklist items in `reference/checklist.md`
 
-## ✅ Quality Checklist
+## ✅ Quality Scoring System
 
-- [ ] One-line description is clear and specific
-- [ ] Features grouped by category in tables
-- [ ] Quick start can be "copy-pasted and run"
-- [ ] Fork projects credit the original
-- [ ] No placeholder text or TODOs
+### Scoring Criteria (Max 40 points)
+1. **Structure Completeness** (10 points)
+2. **Content Quality** (10 points)
+3. **Format Standards** (10 points)
+4. **User Experience** (10 points)
+
+### Score Results
+- **40 points:** Excellent, no changes needed
+- **30-39 points:** Good, optional optimization
+- **20-29 points:** Average, recommended optimization
+- **<20 points:** Poor, needs rewrite
+
+## 📋 Automated Checks
+
+Use `reference/checklist.md` for automated checks:
+
+```bash
+# Check README quality
+# Structure: File existence, language switching, section completeness
+# Content: One-line description, feature display, quick start
+# Format: Heading format, code blocks, tables
+# Links: External links, internal links
+```
 
 ## 📄 License
 

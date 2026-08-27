@@ -7,7 +7,7 @@ description: Use when the user wants to write, rewrite, or improve a README.md f
 
 When the user asks to write a README, follow this workflow: **Analyze → Classify → Draft → Polish → Deliver**.
 
-## Phase 1: Analyze (gather facts, don't write yet)
+## Phase 1: Analyze (gather facts)
 
 1. **Detect project type** by reading config files:
 
@@ -19,11 +19,13 @@ When the user asks to write a README, follow this workflow: **Analyze → Classi
    | `go.mod` | Go |
    | `pyproject.toml` / `setup.py` | Python |
    | `pubspec.yaml` | Flutter/Dart |
+   | `CMakeLists.txt` | C/C++ |
+   | `pom.xml` | Java |
+   | `*.csproj` | C# |
 
 2. **Read existing README** (if any) — understand what's documented, what's missing.
 
-3. **Extract key facts** into a mental checklist:
-
+3. **Extract key facts**:
    ```
    □ Project name
    □ One-line description (what + who + why)
@@ -31,7 +33,6 @@ When the user asks to write a README, follow this workflow: **Analyze → Classi
    □ Fork origin (if any, credit the original)
    □ Core features (3-5 main ones)
    □ Installation method (download / build / package manager)
-   □ Usage environment (OS, versions, prerequisites)
    □ Target audience
    ```
 
@@ -47,12 +48,15 @@ Load the matching template from `reference/`:
 | Library / Package | `template-lib.md` | Others import/use it |
 | Android module / Xposed | `template-module.md` | System-level integration |
 | Web app / Frontend | `template-web.md` | Browser-based interface |
+| CLI tool (detailed) | `template-cli.md` | Command-line tools with args |
+| API service | `template-api.md` | REST/GraphQL APIs |
+| Desktop app (detailed) | `template-desktop.md` | GUI applications |
 
 **If none match**, use the generic structure in Phase 3.
 
 ## Phase 3: Draft (write README.md in Chinese)
 
-### Generic structure (all project types):
+### Generic structure:
 
 ```markdown
 # 项目名称
@@ -66,9 +70,11 @@ Load the matching template from `reference/`:
 
 ## ✨ 功能特性
 按类别分组，**必须用表格**：
+
+### 🎯 核心功能
 | 功能 | 说明 |
 |------|------|
-| ... | ... |
+| 功能 1 | 简要说明 |
 
 ## 🚀 快速开始
 ### 环境要求
@@ -83,9 +89,6 @@ Load the matching template from `reference/`:
 
 ## 🔌 API 参考（如有）
 接口表格：方法 | 路径 | 说明
-
-## 📱 兼容性（如有）
-支持的设备/系统版本。
 
 ## ⚠️ 注意事项
 已知限制、使用禁忌、常见问题。
@@ -110,65 +113,31 @@ Fork 项目、依赖库、灵感来源，附链接。
 | 标题 | emoji + 中文（如 `## ✨ 功能特性`） | 纯英文标题 |
 | 简洁性 | 每句话都提供信息 | 写废话、套话 |
 | Fork | 注明来源并致谢 | 抄袭不署名 |
-| 截图 | 放在最后或功能特性附近 | 放在最前面 |
 | 快速开始 | 从最简单方式开始（下载 > 编译） | 一上来就让用户 clone 编译 |
 
-### Good vs Bad examples:
+## Phase 4: Polish (质量评分 + 自检)
 
-**❌ Bad — 功能用长段落：**
-```markdown
-## 功能
-这个项目有很多功能，包括心率监测、系统托盘运行、Windows通知、
-实时心率显示、OBS覆盖层、HTTP API、自动重连等等。
-```
+### 自动评分系统（每项10分，满分40分）：
 
-**✅ Good — 功能用分组表格：**
-```markdown
-## ✨ 功能特性
+1. **结构完整性**（10分）
+   - [ ] 包含所有必要章节
+   - [ ] 章节顺序合理
 
-### 🎯 核心功能
-| 功能 | 说明 |
-|------|------|
-| 系统托盘运行 | 静默启动，资源占用极低 |
-| 实时心率显示 | Web 界面大数字刷新，心形动画 |
+2. **内容质量**（10分）
+   - [ ] 一句话描述清晰具体
+   - [ ] 功能描述具体明确
 
-### 🔗 集成能力
-| 功能 | 说明 |
-|------|------|
-| OBS 覆盖层 | 透明背景心率叠加层 |
-| HTTP API | REST + SSE 实时推送 |
-```
+3. **格式规范**（10分）
+   - [ ] 功能用表格展示
+   - [ ] 命令在代码块内
 
-**❌ Bad — 快速开始太复杂：**
-```markdown
-## 快速开始
-1. 安装 Rust 工具链
-2. git clone https://github.com/xxx/xxx.git
-3. cd xxx
-4. cargo build --release
-5. 找到 target/release/xxx.exe 运行
-```
+4. **用户体验**（10分）
+   - [ ] 快速开始简单易懂
+   - [ ] 有截图展示（GUI项目）
 
-**✅ Good — 快速开始从最简方式：**
-```markdown
-## 🚀 快速开始
+**总分低于30分需要重新优化。**
 
-### 方式一：下载安装（推荐）
-1. 前往 [Releases](https://github.com/xxx/xxx/releases) 下载最新版本
-2. 直接运行，无需安装
-
-### 方式二：源码编译
-\```bash
-git clone https://github.com/xxx/xxx.git
-cd xxx
-cargo build --release
-\```
-```
-
-## Phase 4: Polish (自检清单)
-
-写完后逐项检查：
-
+### 自检清单：
 - [ ] 一句话描述清晰具体（不是「一个项目」）
 - [ ] 语言切换链接正确
 - [ ] 功能按类别分组，用表格展示
@@ -193,9 +162,17 @@ Always deliver both files:
 - 技术术语保持原文或加注（如「心率广播 (Heart Rate Broadcast)」）
 - 链接保持不变
 
-## Prompt template (给其他 AI 用)
+## AI Installation
 
-When delegating, use this flexible template — fill in the brackets:
+### 安装方式（给AI Agent用）
+
+复制下面的命令，粘贴给你的 AI Agent 即可自动安装：
+
+```
+请帮我安装 write-readme 技能：git clone https://github.com/roxyyn0304/dsh-write-readme.git 到你的 skills 目录
+```
+
+## Prompt template (给其他 AI 用)
 
 ```markdown
 请为以下项目写 README.md + README_EN.md：
